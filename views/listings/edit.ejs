@@ -6,35 +6,35 @@
 
     <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" class="needs-validation" novalidate>
       
-      <!-- Title -->
+  
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input name="listing[title]" value="<%= listing.title %>" class="form-control" type="text" required />
         <div class="invalid-feedback">Please enter a title.</div>
       </div>
 
-      <!-- Description -->
+   
       <div class="mb-3">
         <label for="description" class="form-label">Description</label>
         <textarea name="listing[description]" class="form-control" required><%= listing.description %></textarea>
         <div class="invalid-feedback">Please enter a short description.</div>
       </div>
 
-      <!-- Image Link (Nested URL Input Fix) -->
+    
       <div class="mb-3">
         <label for="image" class="form-label">Image Link</label>
         <input name="listing[image][url]" value="<%= listing.image ? listing.image.url : '' %>" type="text" class="form-control" />
       </div>
 
       <div class="row">
-        <!-- Price -->
+   
         <div class="mb-3 col-md-4">
           <label for="price" class="form-label">Price</label>
           <input name="listing[price]" value="<%= listing.price %>" type="number" class="form-control" required />
           <div class="invalid-feedback">Please enter a valid price.</div>
         </div>
 
-        <!-- Country -->
+    
         <div class="mb-3 col-md-8">
           <label for="country" class="form-label">Country</label>   
           <input name="listing[country]" value="<%= listing.country %>" type="text" class="form-control" required />
@@ -42,14 +42,14 @@
         </div>
       </div>
 
-      <!-- Location -->
+   
       <div class="mb-3">
         <label for="location" class="form-label">Location</label>
         <input name="listing[location]" value="<%= listing.location %>" type="text" class="form-control" required />
         <div class="invalid-feedback">Please enter the location.</div>
       </div>
 
-      <!-- Action Buttons -->
+   
       <div class="mb-3 mt-3">
         <button class="btn btn-dark edit-btn">Save Changes</button>
         <a href="/listings" class="btn btn-outline-secondary ms-2">Back to Home</a>
